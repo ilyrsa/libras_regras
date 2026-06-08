@@ -30,7 +30,7 @@ O sistema processa os dados de entrada em camadas sequenciais até atingir uma t
 
 O conhecimento especializado está mapeado em 10 regras de produção operadas pelo motor:
 
-## Nível 1: Identificação de Contexto
+### Nível 1: Identificação de Contexto
 
 ● Regra 1 (Cognitivo): SE mão em 'C' E local na testa → Contexto: cognitivo.
 
@@ -38,7 +38,7 @@ O conhecimento especializado está mapeado em 10 regras de produção operadas p
 
 ● Regra 7 (Saúde): SE mão em 'A' E local na cabeça → Contexto: saude.
 
-## Nível 2: Identificação de Intenção
+### Nível 2: Identificação de Intenção
 
 ● Regra 3 (Dúvida Mental): SE contexto cognitivo E expressão interrogativa → Intenção: duvida_mental.
 
@@ -46,7 +46,7 @@ O conhecimento especializado está mapeado em 10 regras de produção operadas p
 
 ● Regra 8 (Relato de Dor): SE contexto saude E expressão dor_ou_tristeza → Intenção: relato_dor.
 
-## Nível 3: Dedução do Significado Final e Resolução de Conflitos
+### Nível 3: Dedução do Significado Final e Resolução de Conflitos
 
 ● Regra 5 (Não entendi): SE intenção duvida_mental E movimento balancar_cabeca → Tradução: "Não entendi / Estou confuso".
 
@@ -60,7 +60,7 @@ O conhecimento especializado está mapeado em 10 regras de produção operadas p
 
 O sistema foi validado por meio de três cenários que simulam diferentes fluxos de execução da memória de trabalho:
 
-## Caso de Teste 1: Encadeamento Simples (Tradução Base)
+### Caso de Teste 1: Encadeamento Simples (Tradução Base)
 
 ● Entradas: ParametroSinal(mao="em_C", local="testa", movimento="balancar_cabeca"), Expressao(tipo="interrogativa").
 
@@ -68,7 +68,7 @@ O sistema foi validado por meio de três cenários que simulam diferentes fluxos
 
 ● Resultado: Tradução final deduzida como "Não entendi / Estou confuso".
 
-## Caso de Teste 2: Resolução de Conflito com Atributo salience
+### Caso de Teste 2: Resolução de Conflito com Atributo salience
 
 ● Entradas: ParametroSinal(mao="em_A", local="head", movimento="pulsante"), Expressao(tipo="dor_ou_tristeza").
 
@@ -76,7 +76,7 @@ O sistema foi validado por meio de três cenários que simulam diferentes fluxos
 
 ● Resultado: Tradução final deduzida como "Enxaqueca / Dor latejante".
 
-## Caso de Teste 3: Ativação da Regra Genérica (Sem Conflito)
+### Caso de Teste 3: Ativação da Regra Genérica (Sem Conflito)
 
 ● Entradas: ParametroSinal(mao="em_A", local="cabeca", movimento="nenhum"), Expressao(tipo="dor_ou_tristeza").
 
