@@ -106,7 +106,16 @@ Siga os passos abaixo para rodar os testes do motor de inferência localmente:
 3. **Instale as dependências:**
    ```bash
    pip install -r requirements.txt
+
    
 4. **Execute o sistema:**
    ```bash
    python -m src.main
+
+---
+
+## Autores
+
+Desenvolvido por [@ilyrsa](https://github.com/ilyrsa) e [@luislrl](https://github.com/luislrl).
+
+---
