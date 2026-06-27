@@ -1,0 +1,10 @@
+# Ambientes Virtuais
+venv/
+env/
+
+# Cache do Python
+__pycache__/
+*.pyc
+
+# Arquivos do Jupyter/Colab (se tiver sobrado algum lixo)
+.ipynb_checkpoints/
