@@ -123,8 +123,9 @@ Siga os passos abaixo para rodar os testes do motor de inferência localmente:
 
 ### Como Executar o Controlador Fuzzy
 Após ativar seu ambiente virtual e instalar as dependências do `requirements.txt`, execute o simulador fuzzy com os 3 casos de teste comentados:
-```bash
-python -m src.fuzzy_main
+    ```bash
+    python -m src.fuzzy_main
+    ```
 
 ---
 
