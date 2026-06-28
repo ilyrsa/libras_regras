@@ -79,10 +79,19 @@ O sistema foi validado por meio de três cenários que simulam diferentes fluxos
 ## Estrutura do Repositório
 O projeto foi refatorado e modularizado para facilitar a manutenção e escalabilidade:
 
-- `src/models.py`: Definição das classes de Fatos (`ParametroSinal`, `Expressao`, `Contexto`, etc.).
-- `src/engine.py`: O Motor de Inferência (`ClassificadorLibras`) contendo todas as regras lógicas.
-- `src/main.py`: Ponto de entrada do sistema contendo os casos de teste práticos.
-- `requirements.txt`: Dependências necessárias para a execução do projeto.
+- `src/models.py`: Definição das classes de Fatos (`ParametroSinal`, `Expressao`, `Contexto`, etc.) usadas pelo motor clássico.
+- `src/engine.py`: O Motor de Inferência Base (`ClassificadorLibras`) contendo todas as regras lógicas nítidas (crisp).
+- `src/main.py`: Ponto de entrada do sistema clássico contendo os casos de teste práticos.
+- `src/fuzzy_engine.py`: O Controlador Fuzzy contendo a modelagem das variáveis linguísticas (Mamdani) e regras de intensidade.
+- `src/fuzzy_main.py`: Ponto de entrada do simulador fuzzy, responsável pelos testes de limite, defuzzificação e interpretação clínica.
+- `requirements.txt`: Dependências unificadas necessárias para a execução do projeto (incluindo `experta` e `scikit-fuzzy`).
+
+## Mini-Projeto 2 (Controlador Fuzzy)
+Como evolução do domínio (Caminho B), o projeto agora conta com um Controlador Fuzzy (Mamdani) focado em quantificar a **Intensidade da Dor** em sinais de saúde. 
+Enquanto o motor de inferência nítido (experta) avalia se é "Dor Genérica" ou "Enxaqueca", o motor Fuzzy analisa graus de fluidez:
+* **Entradas:** `velocidade` do movimento (0-10) e tensão da `expressao` facial (0-10).
+* **Saída Defuzzificada:** Intensidade da `dor` (0-10), variando de leve a enxaqueca severa.
+* **Base de Regras:** 9 regras fuzzy que cobrem 100% do espaço de inferência sem lacunas.
 
 ## Como Executar
 
@@ -111,6 +120,11 @@ Siga os passos abaixo para rodar os testes do motor de inferência localmente:
 4. **Execute o sistema:**
    ```bash
    python -m src.main
+
+### Como Executar o Controlador Fuzzy
+Após ativar seu ambiente virtual e instalar as dependências do `requirements.txt`, execute o simulador fuzzy com os 3 casos de teste comentados:
+```bash
+python -m src.fuzzy_main
 
 ---
 
